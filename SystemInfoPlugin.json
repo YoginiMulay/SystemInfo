@@ -1,59 +1,13 @@
 {
-    "$schema": "https://raw.githubusercontent.com/rdkcentral/rdkservices/main/Tools/json_generator/schemas/interface.schema.json",
-    "jsonrpc": "2.0",
-    "info": {
-        "title": "SystemInfo API",
-        "class": "SystemInfo", 
-        "description": "The `SystemInfo` plugin allows you to retreive system information."
-    },
-    "common": {
-        "$ref": "../common/common.json"
-    },
-    "definitions": {
-        "quirks":{
-            "summary": "Update `RDK-20093` string",
-            "type": "string",
-            "example": "RDK-20093"
-        }
-    },
-    "methods": {
-        "getQuirks":{
-            "summary": "Get standard string `RDK-20093`.",
-            "result": {
-                "type": "object",
-                "properties": {
-                    "quirks": {
-                        "$ref": "#/definitions/quirks"
-                    },
-                    "success": {
-                        "$ref": "#/common/success"
-                    }
-                },
-                "required": [
-                    "quirks",
-                    "success"
-                ]
-            }
-        },
-        "isSystemInfoAvailable":{
-            "summary": "Get status of SystemInfo Component.",
-            "result": {
-                "type": "object",
-                "properties": {
-                    "SystemInfoAvailable": {
-                        "summary": "`true` if systeminfo component is up, otherwise `false`",
-                        "type": "boolean",
-                        "example": true
-                    },
-                    "success": {
-                        "$ref": "#/common/success"
-                    }
-                },
-                "required": [
-                    "SystemInfoAvailable",
-                    "success"
-                ]
-            }
-        }
-    }
+   "$schema": "https://raw.githubusercontent.com/rdkcentral/rdkservices/mai    n/Tools/json_generator/schemas/plugin.schema.json",
+   "info": {
+   "title": "SystemInfoPlugin",
+   "callsign": "org.rdk.SystemInfo",
+   "locator": "libWPEFrameworkSystemInfo.so",
+   "status": "production",
+   "description": "The `SystemInfo` plugin allows you to retreive system     information."
+ },
+    "interface": {
+    "$ref": "SystemInfo.json#"
+ }
 }
